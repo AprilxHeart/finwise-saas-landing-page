@@ -8,5 +8,5 @@ export const siteDetails = {
     language: 'th',
     locale: 'th-TH',
     siteLogo: 'WISE', // Brand logo text
-    googleAnalyticsId: '', // e.g. G-XXXXXXX,
+    googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID || '', // e.g. G-XXXXXXX,
 }
