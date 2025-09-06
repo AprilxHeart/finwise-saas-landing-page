@@ -1,6 +1,6 @@
 export const ctaDetails = {
-    heading: 'Join Over 1 Million Users To Transform Your Finances',
-    subheading: 'Your journey to financial freedom starts here. Download Finwise today and take the first step towards a brighter financial future!',
-    appStoreUrl: '#',
-    googlePlayUrl: '#'
+    heading: 'เป็นเจ้าของนาฬิกาไทยคุณภาพพรีเมียม',
+    subheading: 'ค้นพบคอลเลกชั่นนาฬิกา WISE Watch ที่ผสมผสานดีไซน์ไทยกับคุณภาพสากล พร้อมโปรโมชั่นพิเศษสำหรับคุณ',
+    facebookUrl: 'https://www.facebook.com/wisewatch',
+    lineUrl: 'https://line.me/R/ti/p/@wisewatch'
 }

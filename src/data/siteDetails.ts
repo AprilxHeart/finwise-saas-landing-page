@@ -1,12 +1,12 @@
 export const siteDetails = {
-    siteName: 'Finwise',
-    siteUrl: 'https://finwise-omega.vercel.app/',
+    siteName: 'WISE Watch',
+    siteUrl: 'https://wisewatch.vercel.app/',
     metadata: {
-        title: 'Finwise - Next.js and Tailwind CSS Landing Page Template',
-        description: 'Finwise empowers businesses with cutting-edge technology solutions to drive success and efficiency.',
+        title: 'WISE Watch - นาฬิกาไทยคุณภาพพรีเมียม',
+        description: 'WISE Watch นาฬิกาแบรนด์ไทยที่ผสมผสานดีไซน์ร่วมสมัยกับงานฝีมือไทยแท้ ครบครันด้วยคอลเลกชั่นหลากหลายสไตล์',
     },
-    language: 'en-us',
-    locale: 'en-US',
-    siteLogo: `${process.env.BASE_PATH || ''}/images/logo.png`, // or use a string for the logo e.g. "TechStartup"
+    language: 'th',
+    locale: 'th-TH',
+    siteLogo: 'WISE', // Brand logo text
     googleAnalyticsId: '', // e.g. G-XXXXXXX,
 }

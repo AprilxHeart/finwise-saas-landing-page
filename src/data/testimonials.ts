@@ -1,23 +1,22 @@
 import { ITestimonial } from "@/types";
-import { siteDetails } from "./siteDetails";
 
 export const testimonials: ITestimonial[] = [
     {
-        name: 'John Smith',
-        role: 'CEO at Company',
-        message: `${siteDetails.siteName}'s AI-driven insights have transformed how we approach financial planning for our clients. It's an invaluable resource in the modern financial landscape.`,
+        name: 'คุณสมชาย วงศ์มาลัย',
+        role: 'ผู้บริหาร บริษัทเอกชน',
+        message: `ใส่นาฬิกา WISE Watch มา 3 ปีแล้ว คุณภาพดีมาก ดีไซน์ไทยๆ แต่ดูหรูหรา ใส่ประชุมหรือไปงานก็เหมาะ ที่สำคัญคือช่างซ่อมก็หาง่าย เพราะมีศูนย์บริการทั่วประเทศ`,
         avatar: '/images/testimonial-1.webp',
     },
     {
-        name: 'Jane Doe',
-        role: 'CTO at Startup',
-        message: `As a CTO, I'm impressed by ${siteDetails.siteName}'s robust security measures and seamless integrations. It's rare to find an app that balances user-friendliness with such advanced technology.`,
+        name: 'คุณนิดา สุขใส',
+        role: 'เจ้าของร้านค้า',
+        message: `ซื้อนาฬิกา WISE Watch มาให้สามี ตอนแรกกังวลว่าจะคุ้มค่าไหม แต่พอใช้ไปแล้วประทับใจมาก เก็บเวลาแม่นยำ สายหนังก็นุ่มมือ ราคาคุ้มค่ามากเลย`,
         avatar: '/images/testimonial-2.webp',
     },
     {
-        name: 'Emily Johnson',
-        role: 'Product Manager',
-        message: `${siteDetails.siteName} is revolutionizing personal finance management. Its intuitive design and powerful features make it an indispensable tool for anyone serious about financial growth.`,
+        name: 'คุณวิชัย รุ่งโรจน์',
+        role: 'วิศวกร',
+        message: `เป็นคอนาฬิกามาตั้งแต่เด็ก WISE Watch นี่สมราคาจริงๆ เครื่องจักรสวิส ตัวเรือนแข็งแรง กันน้ำได้จริง ที่สำคัญสนับสนุนของไทยด้วย ภูมิใจที่ได้ใส่`,
         avatar: '/images/testimonial-3.webp',
     },
 ];

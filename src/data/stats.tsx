@@ -1,22 +1,22 @@
-import { BsBarChartFill, BsFillStarFill } from "react-icons/bs";
-import { PiGlobeFill } from "react-icons/pi";
+import { BsFillStarFill, BsShieldCheck } from "react-icons/bs";
+import { PiHeartFill } from "react-icons/pi";
 
 import { IStats } from "@/types";
 
 export const stats: IStats[] = [
     {
-        title: "20M+",
-        icon: <BsBarChartFill size={34} className="text-blue-500" />,
-        description: "Transactions processed securely every day, providing real-time insights."
+        title: "15+",
+        icon: <PiHeartFill size={34} className="text-red-500" />,
+        description: "ปีในการสร้างสรรค์นาฬิกาคุณภาพ ด้วยประสบการณ์และความเชี่ยวชาญ"
     },
     {
-        title: "5.0",
+        title: "4.9",
         icon: <BsFillStarFill size={34} className="text-yellow-500" />,
-        description: "Star rating, consistently maintained across app stores."
+        description: "คะแนนรีวิวจากลูกค้า จากการให้บริการและคุณภาพที่ยอดเยี่ยม"
     },
     {
-        title: "200+ ",
-        icon: <PiGlobeFill size={34} className="text-green-600" />,
-        description: "Financial Institutions, seamlessly integrated, so you can manage all accounts."
+        title: "50+ ",
+        icon: <BsShieldCheck size={34} className="text-green-600" />,
+        description: "ศูนย์บริการทั่วประเทศ พร้อมดูแลและบำรุงรักษานาฬิกาของคุณ"
     }
 ];

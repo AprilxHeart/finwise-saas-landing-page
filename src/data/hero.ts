@@ -1,5 +1,5 @@
 export const heroDetails = {
-    heading: 'Smart, Secure, Simple Financial Management',
-    subheading: 'From effortless budgeting to real-time investment insights, Finwise puts you in control of your money like never before',
+    heading: 'WISE Watch - ดีไซน์ไทย คุณภาพสากล',
+    subheading: 'นาฬิกาแบรนด์ไทยที่ผสมผสานงานฝีมือไทยแท้กับเทคโนโลยีสมัยใหม่ ดีไซน์หรูหรา คุณภาพยั่งยืน เหมาะสำหรับทุกโอกาส',
     centerImageSrc: '/images/hero-mockup.webp',
 }

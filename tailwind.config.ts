@@ -17,6 +17,11 @@ const config: Config = {
         "primary-accent": "var(--primary-accent)",
         "foreground-accent": "var(--foreground-accent)",
         "hero-background": "var(--hero-background)",
+        "luxury-black": "var(--luxury-black)",
+        "warm-gray": "var(--warm-gray)",
+      },
+      fontFamily: {
+        'prompt': ['Prompt', 'sans-serif'],
       },
     },
   },

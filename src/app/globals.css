@@ -1,16 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
-  --primary: #FED835;
-  --secondary: #304fff;
+  --foreground: #1a1a1a;
+  --primary: #d4af37; /* Gold */
+  --secondary: #2c2c2c; /* Dark Gray */
 
-  --primary-accent: #e5c230;
-  --foreground-accent: #454545;
-  --hero-background: #F3F3F5;
+  --primary-accent: #b8941f; /* Darker Gold */
+  --foreground-accent: #4a4a4a; /* Medium Gray */
+  --hero-background: #f8f8f8;
+  --luxury-black: #000000;
+  --warm-gray: #6b6b6b;
 }
 
 html {
@@ -22,7 +25,7 @@ body {
   
   color: var(--foreground);
   background: var(--background);
-  font-family: "Source Sans 3", sans-serif;
+  font-family: "Prompt", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -33,16 +36,17 @@ body {
   }
 }
 
-.manrope {
-  font-family: "Manrope", sans-serif;
+.prompt {
+  font-family: "Prompt", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Manrope", sans-serif;
+  font-family: "Prompt", sans-serif;
   font-optical-sizing: auto;
   font-style: normal;
+  font-weight: 600;
 }
 
 #logos svg {
@@ -51,4 +55,17 @@ h1, h2, h3, h4, h5, h6 {
 
 .benefit-section:last-of-type > div {
   @apply mb-10;
+}
+
+/* Custom classes for luxury watch theme */
+.luxury-gradient {
+  background: linear-gradient(135deg, var(--luxury-black) 0%, var(--secondary) 50%, var(--primary) 100%);
+}
+
+.gold-accent {
+  color: var(--primary);
+}
+
+.watch-text-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }

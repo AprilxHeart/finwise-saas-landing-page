@@ -1,25 +1,24 @@
 import { IFAQ } from "@/types";
-import { siteDetails } from "./siteDetails";
 
 export const faqs: IFAQ[] = [
     {
-        question: `Is ${siteDetails.siteName} secure?`,
-        answer: 'Absolutely. We use bank-level encryption to protect your data and never store your login information. Plus, our biometric authentication adds an extra layer of security.',
+        question: 'นาฬิกา WISE Watch ใช้เครื่องจักรอะไร?',
+        answer: 'เราใช้เครื่องจักรคุณภาพสูงจากสวิตเซอร์แลนด์และญี่ปุ่น ขึ้นอยู่กับรุ่น Classic Series ใช้เครื่องจักรควอทซ์ญี่ปุ่น ส่วน Royal Series และ Limited Edition ใช้เครื่องจักรออโตเมติกสวิสแท้',
     },
     {
-        question: `Can I use ${siteDetails.siteName} on multiple devices?`,
-        answer: 'Absolutely! Your Finwise account syncs seamlessly across all your devices - smartphone, tablet, and computer.',
+        question: 'การรับประกันเป็นอย่างไร?',
+        answer: 'นาฬิกาทุกเรือนมีการรับประกัน 2 ปีเต็ม (Limited Edition รับประกัน 3 ปี) ครอบคลุมความเสียหายจากการผลิตและการใช้งานปกติ พร้อมศูนย์บริการทั่วประเทศ',
     },
     {
-        question: 'Can I connect all my bank accounts?',
-        answer: `Yes! ${siteDetails.siteName} supports connections with over 10,000 financial institutions worldwide. Simply log in through our secure portal to link your accounts.`
+        question: 'มีร้านค้าที่ไหนได้บ้าง?',
+        answer: 'เรามีตัวแทนจำหน่ายใน ห้างสรรพสินค้าชั้นนำทั่วประเทศ รวมถึงร้าน WISE Watch Store ในกรุงเทพฯ เชียงใหม่ ขอนแก่น และหาดใหญ่ สามารถสั่งซื้อออนไลน์ผ่าน Facebook และ Line ได้'
     },
     {
-        question: 'Do I need any financial expertise to use the investing features?',
-        answer: 'Not at all! Our expert-curated portfolios and educational resources make investing accessible to everyone, regardless of experience level.',
+        question: 'สามารถผ่อนชำระได้ไหม?',
+        answer: 'ได้ครับ เรามีบริการผ่อน 0% นาน 10 เดือน สำหรับบัตรเครดิตทุกธนาคาร หรือสามารถผ่อนผ่าน ShopBack Paylater และ Atome ได้',
     },
     {
-        question: 'What if I need help using the app?',
-        answer: 'Our dedicated support team is available 24/7 via chat or email. Plus, we offer extensive in-app tutorials and a comprehensive knowledge base to help you make the most of Finwise.'
+        question: 'หากต้องการซ่อมหรือบำรุงรักษาทำอย่างไร?',
+        answer: 'สามารถนำมาที่ศูนย์บริการ WISE Watch ทั่วประเทศ หรือติดต่อทีมบริการลูกค้าเพื่อจัดส่งซ่อมถึงบ้าน บริการทำความสะอาดและตรวจเช็คฟรีทุก 6 เดือน'
     }
 ];
