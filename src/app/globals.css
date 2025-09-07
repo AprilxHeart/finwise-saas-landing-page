@@ -58,14 +58,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Custom classes for professional pump/engineering theme */
-.professional-gradient {
-  background: linear-gradient(135deg, var(--luxury-black) 0%, var(--secondary) 50%, var(--primary) 100%);
-}
-
-.blue-accent {
-  color: var(--primary);
-}
-
 .pump-text-shadow {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }
