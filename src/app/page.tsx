@@ -16,7 +16,7 @@ const HomePage: React.FC = () => {
         <Section
           id="features"
           title="คุณสมบัติเด่น"
-          description="ความพิเศษของนาฬิกา WISE Watch ที่ทำให้เราแตกต่าง"
+          description="ความพิเศษขอเรา ที่ทำให้เราแตกต่าง"
         >
           <Benefits />
         </Section>

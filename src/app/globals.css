@@ -5,15 +5,15 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #1a1a1a;
-  --primary: #d4af37; /* Gold */
-  --secondary: #2c2c2c; /* Dark Gray */
+  --foreground: #1a202c; /* Navy Blue */
+  --primary: #2b6cb8; /* Professional Blue */
+  --secondary: #4a5568; /* Blue Gray */
 
-  --primary-accent: #b8941f; /* Darker Gold */
-  --foreground-accent: #4a4a4a; /* Medium Gray */
-  --hero-background: #f8f8f8;
-  --luxury-black: #000000;
-  --warm-gray: #6b6b6b;
+  --primary-accent: #1e4a73; /* Darker Blue */
+  --foreground-accent: #718096; /* Medium Blue Gray */
+  --hero-background: #f7fafc;
+  --luxury-black: #1a202c; /* Navy instead of black */
+  --warm-gray: #718096;
 }
 
 html {
@@ -21,7 +21,7 @@ html {
 }
 
 body {
-  @apply text-lg;
+  @apply text-base; /* ลดขนาดจาก text-lg เป็น text-base */
   
   color: var(--foreground);
   background: var(--background);
@@ -57,15 +57,15 @@ h1, h2, h3, h4, h5, h6 {
   @apply mb-10;
 }
 
-/* Custom classes for luxury watch theme */
-.luxury-gradient {
+/* Custom classes for professional pump/engineering theme */
+.professional-gradient {
   background: linear-gradient(135deg, var(--luxury-black) 0%, var(--secondary) 50%, var(--primary) 100%);
 }
 
-.gold-accent {
+.blue-accent {
   color: var(--primary);
 }
 
-.watch-text-shadow {
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+.pump-text-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
 }

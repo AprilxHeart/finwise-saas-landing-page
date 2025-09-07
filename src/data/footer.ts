@@ -7,10 +7,10 @@ export const footerDetails: {
     telephone: string;
     socials: ISocials;
 } = {
-    subheading: "นาฬิกาไทยคุณภาพพรีเมียม ผสมผสานดีไซน์ไทยกับคุณภาพสากล",
+    subheading: "ปั๊มน้ำเยอรมันคุณภาพพรีเมียม ทนทาน ประหยัดไฟ เหมาะสำหรับทุกการใช้งาน",
     quickLinks: [
         {
-            text: "คอลเลกชั่น",
+            text: "ผลิตภัณฑ์",
             url: "#products"
         },
         {
@@ -26,13 +26,13 @@ export const footerDetails: {
             url: "#faq"
         }
     ],
-    email: 'info@wisewatch.co.th',
-    telephone: '02-123-4567',
+    email: 'info@eifelpumps.co.th',
+    telephone: '02-456-7890',
     socials: {
-        facebook: 'https://www.facebook.com/wisewatch',
-        instagram: 'https://www.instagram.com/wisewatch_th',
-        youtube: 'https://youtube.com/@wisewatchthailand',
-        // tiktok: 'https://www.tiktok.com/@wisewatch_th',
-        // line: 'https://line.me/R/ti/p/@wisewatch'
+        facebook: 'https://www.facebook.com/eifelpumps',
+        instagram: 'https://www.instagram.com/eifel_pumps_th',
+        youtube: 'https://youtube.com/@eifelpumpsthailand',
+        // tiktok: 'https://www.tiktok.com/@eifel_pumps_th',
+        // line: 'https://line.me/R/ti/p/@eifelpumps'
     }
 }

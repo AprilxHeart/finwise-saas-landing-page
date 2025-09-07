@@ -1,12 +1,12 @@
 export const siteDetails = {
-    siteName: 'WISE Watch',
-    siteUrl: 'https://wisewatch.vercel.app/',
+    siteName: 'EIFEL',
+    siteUrl: 'https://eifel-pumps.vercel.app/',
     metadata: {
-        title: 'WISE Watch - นาฬิกาไทยคุณภาพพรีเมียม',
-        description: 'WISE Watch นาฬิกาแบรนด์ไทยที่ผสมผสานดีไซน์ร่วมสมัยกับงานฝีมือไทยแท้ ครบครันด้วยคอลเลกชั่นหลากหลายสไตล์',
+        title: 'EIFEL - ปั๊มน้ำคุณภาพพรีเมียม',
+        description: 'EIFEL ปั๊มน้ำเยอรมันคุณภาพสูง ทนทาน ประหยัดไฟ เหมาะสำหรับทุกการใช้งาน พร้อมบริการหลังการขายครบครัน',
     },
     language: 'th',
     locale: 'th-TH',
-    siteLogo: 'WISE', // Brand logo text
+    siteLogo: 'EIFEL', // Brand logo text
     googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID || '', // e.g. G-XXXXXXX,
 }

@@ -19,6 +19,12 @@ const config: Config = {
         "hero-background": "var(--hero-background)",
         "luxury-black": "var(--luxury-black)",
         "warm-gray": "var(--warm-gray)",
+        
+        // EIFEL brand colors
+        "eifel-blue": "#2b6cb8",
+        "eifel-navy": "#1e4a73",
+        "eifel-gray": "#718096",
+        "eifel-light": "#f7fafc",
       },
       fontFamily: {
         'prompt': ['Prompt', 'sans-serif'],

@@ -10,16 +10,16 @@ const CTA: React.FC = () => {
                     </div>
 
                     <div className="h-full flex flex-col items-center justify-center text-white text-center px-5">
-                        <h2 className="text-2xl sm:text-3xl md:text-5xl md:leading-tight font-semibold mb-4 max-w-2xl watch-text-shadow">{ctaDetails.heading}</h2>
+                        <h2 className="text-xl sm:text-2xl md:text-4xl md:leading-tight font-semibold mb-4 max-w-2xl pump-text-shadow">{ctaDetails.heading}</h2>
 
-                        <p className="mx-auto max-w-xl md:px-5 text-gray-200">{ctaDetails.subheading}</p>
+                        <p className="mx-auto max-w-xl md:px-5 text-gray-200 text-sm md:text-base">{ctaDetails.subheading}</p>
 
                         <div className="mt-8 flex flex-col sm:flex-row items-center gap-4">
                             <a 
                                 href={ctaDetails.facebookUrl} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="bg-primary hover:bg-primary-accent text-luxury-black font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                                className="bg-primary hover:bg-primary-accent text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm"
                             >
                                 ดูใน Facebook
                             </a>
@@ -27,9 +27,9 @@ const CTA: React.FC = () => {
                                 href={ctaDetails.lineUrl} 
                                 target="_blank" 
                                 rel="noopener noreferrer"
-                                className="bg-white hover:bg-gray-100 text-luxury-black font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
+                                className="bg-white hover:bg-gray-100 text-primary font-medium py-3 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg text-sm"
                             >
-                                สั่งซื้อผ่าน Line
+                                สอบถามผ่าน Line
                             </a>
                         </div>
                     </div>
