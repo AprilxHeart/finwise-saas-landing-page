@@ -5,18 +5,18 @@ import { IStats } from "@/types";
 
 export const stats: IStats[] = [
     {
-        title: "25+",
+        title: "1000+",
         icon: <PiDropFill size={34} className="text-blue-500" />,
-        description: "ปีในการผลิตปั๊มน้ำคุณภาพ ด้วยเทคโนโลยีและประสบการณ์จากเยอรมนี"
+        description: "โครงการที่ติดตั้งสำเร็จทั่วประเทศไทย ครอบคลุมทุกอุตสาหกรรม"
     },
     {
-        title: "4.8",
+        title: "99.8%",
         icon: <BsFillStarFill size={34} className="text-yellow-500" />,
-        description: "คะแนนรีวิวจากลูกค้า จากการให้บริการและคุณภาพที่ยอดเยี่ยม"
+        description: "ระดับความพึงพอใจจากลูกค้า จากการให้บริการและคุณภาพที่ยอดเยี่ยม"
     },
     {
-        title: "80+ ",
+        title: "24/7",
         icon: <BsShieldCheck size={34} className="text-green-600" />,
-        description: "ศูนย์บริการทั่วประเทศ พร้อมช่างผู้เชี่ยวชาญและอะไหล่แท้"
+        description: "บริการหลังการขายและซ่อมบำรุง พร้อมทีมช่างผู้เชี่ยวชาญ"
     }
 ];

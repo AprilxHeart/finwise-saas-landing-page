@@ -1,12 +1,12 @@
 export const siteDetails = {
-    siteName: 'EIFEL',
+    siteName: 'Eifel Pump Thailand',
     siteUrl: 'https://eifel-pumps.vercel.app/',
     metadata: {
-        title: 'EIFEL - ปั๊มน้ำคุณภาพพรีเมียม',
-        description: 'EIFEL ปั๊มน้ำเยอรมันคุณภาพสูง ทนทาน ประหยัดไฟ เหมาะสำหรับทุกการใช้งาน พร้อมบริการหลังการขายครบครัน',
+        title: 'Eifel Pump Thailand - ปั๊มน้ำอุตสาหกรรมคุณภาพสูง มาตรฐานสากล',
+        description: 'Eifel Pump ผู้นำเข้าและจัดจำหน่ายปั๊มน้ำอุตสาหกรรม ปั๊มดับเพลิง ปั๊มน้ำเสีย และปั๊มสุญญากาศ คุณภาพสูง มาตรฐาน UL และ ISO ประหยัดพลังงาน ตอบโจทย์ทุกการใช้งาน',
     },
     language: 'th',
     locale: 'th-TH',
-    siteLogo: 'EIFEL', // Brand logo text
+    siteLogo: 'Eifel Pump', // Brand logo text
     googleAnalyticsId: process.env.GOOGLE_ANALYTICS_ID || '', // e.g. G-XXXXXXX,
 }

@@ -7,7 +7,7 @@ export const footerDetails: {
     telephone: string;
     socials: ISocials;
 } = {
-    subheading: "ปั๊มน้ำเยอรมันคุณภาพพรีเมียม ทนทาน ประหยัดไฟ เหมาะสำหรับทุกการใช้งาน",
+    subheading: "ปั๊มน้ำคุณภาพสูง มาตรฐานสากล รับรอง UL และ ISO ประหยัดพลังงาน เหมาะสำหรับทุกอุตสาหกรรม",
     quickLinks: [
         {
             text: "ผลิตภัณฑ์",
@@ -26,8 +26,8 @@ export const footerDetails: {
             url: "#faq"
         }
     ],
-    email: 'info@eifelpumps.co.th',
-    telephone: '02-456-7890',
+    email: 'sales@eifelcn.com',
+    telephone: '+86 591 38260798',
     socials: {
         facebook: 'https://www.facebook.com/eifelpumps',
         instagram: 'https://www.instagram.com/eifel_pumps_th',
