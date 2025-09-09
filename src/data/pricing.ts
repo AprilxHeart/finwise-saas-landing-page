@@ -4,6 +4,9 @@ export const tiers: IPricing[] = [
     {
         name: 'EH Series - ปั๊มอุตสาหกรรม',
         price: 'ติดต่อสอบถาม',
+        category: 'ปั๊มอุตสาหกรรม',
+        description: 'ปั๊มน้ำอุตสาหกรรมมาตรฐาน ISO2858 ประสิทธิภาพเหนือกว่า',
+        imageSrc: '/images/EA-1-500x500.jpg',
         features: [
             'ปั๊มน้ำอุตสาหกรรมมาตรฐาน ISO2858',
             'ประสิทธิภาพเหนือกว่ามาตรฐาน',
@@ -18,6 +21,9 @@ export const tiers: IPricing[] = [
     {
         name: 'EHF/ESF Series - ปั๊มดับเพลิง',
         price: 'ติดต่อสอบถาม',
+        category: 'ปั๊มดับเพลิง',
+        description: 'ปั๊มดับเพลิง UL Listed รับรองความปลอดภัยสูงสุด',
+        imageSrc: '/images/ES+1-500x500.jpg',
         features: [
             'ปั๊มดับเพลิง UL Listed',
             'รับรองโดย UL (สหรัฐอเมริกา)',
@@ -32,6 +38,9 @@ export const tiers: IPricing[] = [
     {
         name: 'EJ/EJZ/EJT Series - ปั๊มน้ำเสีย',
         price: 'ติดต่อสอบถาม',
+        category: 'ปั๊มน้ำเสีย',
+        description: 'ปั๊มน้ำเสียและตะกอน รองรับของแข็งได้ถึง 76 มม.',
+        imageSrc: '/images/EA-1-500x500.jpg',
         features: [
             'ปั๊มน้ำเสียและปั๊มดูดตะกอน',
             'รองรับของแข็งขนาดสูงสุด 76 มม.',
@@ -46,6 +55,9 @@ export const tiers: IPricing[] = [
     {
         name: 'EJCY Series - ปั๊มสุญญากาศ',
         price: 'ติดต่อสอบถาม',
+        category: 'ปั๊มสุญญากาศ',
+        description: 'ปั๊มดูดน้ำแบบสุญญากาศ ไพรม์เองได้โดยไม่ต้องเติมน้ำ',
+        imageSrc: '/images/ES+1-500x500.jpg',
         features: [
             'ปั๊มดูดน้ำแบบสุญญากาศ',
             'Vacuum Assisted Self-priming',
