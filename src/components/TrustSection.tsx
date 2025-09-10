@@ -1,11 +1,14 @@
+'use client';
+
 import React from 'react';
-import Image from 'next/image';
+import Image from 'next/image'
 import Container from './Container';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface TrustItem {
   id: string;
-  title: string;
-  description: string;
+  title: { th: string; en: string };
+  description: { th: string; en: string };
   image: string;
   icon: React.ReactNode;
 }
@@ -13,8 +16,14 @@ interface TrustItem {
 const trustItems: TrustItem[] = [
   {
     id: '1',
-    title: 'มาตรฐานสากล',
-    description: 'ผลิตภัณฑ์ผ่านมาตรฐาน ISO และการรับรองคุณภาพระดับสากล',
+    title: { 
+      th: 'มาตรฐานสากล', 
+      en: 'International Standards' 
+    },
+    description: { 
+      th: 'ผลิตภัณฑ์ผ่านมาตรฐาน ISO และการรับรองคุณภาพระดับสากล',
+      en: 'Products certified with ISO standards and international quality certifications'
+    },
     image: '/images/Trust/output-003.png',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -24,8 +33,14 @@ const trustItems: TrustItem[] = [
   },
   {
     id: '2',
-    title: 'การรับประกัน',
-    description: 'รับประกันสินค้า 2 ปี พร้อมบริการหลังการขายที่ครอบคลุม',
+    title: { 
+      th: 'การรับประกัน', 
+      en: 'Warranty Coverage' 
+    },
+    description: { 
+      th: 'รับประกันสินค้า 2 ปี พร้อมบริการหลังการขายที่ครอบคลุม',
+      en: '2-year product warranty with comprehensive after-sales service'
+    },
     image: '/images/Trust/output-005.png',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -35,8 +50,14 @@ const trustItems: TrustItem[] = [
   },
   {
     id: '3',
-    title: 'ความปลอดภัย',
-    description: 'ระบบความปลอดภัยที่ครอบคลุม ป้องกันอุบัติเหตุในการใช้งาน',
+    title: { 
+      th: 'ความปลอดภัย', 
+      en: 'Safety Systems' 
+    },
+    description: { 
+      th: 'ระบบความปลอดภัยที่ครอบคลุม ป้องกันอุบัติเหตุในการใช้งาน',
+      en: 'Comprehensive safety systems to prevent accidents during operation'
+    },
     image: '/images/Trust/output-019.png',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -46,8 +67,14 @@ const trustItems: TrustItem[] = [
   },
   {
     id: '4',
-    title: 'ประสิทธิภาพสูง',
-    description: 'เทคโนโลยีที่ทันสมัย ประหยัดพลังงาน และมีประสิทธิภาพสูง',
+    title: { 
+      th: 'ประสิทธิภาพสูง', 
+      en: 'High Performance' 
+    },
+    description: { 
+      th: 'เทคโนโลยีที่ทันสมัย ประหยัดพลังงาน และมีประสิทธิภาพสูง',
+      en: 'Modern technology, energy-efficient and high performance'
+    },
     image: '/images/Trust/output-021.png',
     icon: (
       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -65,16 +92,18 @@ const certifications = [
 ];
 
 const TrustSection: React.FC = () => {
+  const { language, t } = useLanguage();
+  
   return (
-    <div className="py-16 bg-white">
+    <div className="py-16 bg-white dark:bg-gray-800 transition-colors">
       <Container>
         {/* Main Trust Section */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            ความน่าเชื่อถือและคุณภาพ
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+            {t.trust.title}
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            มาตรฐานการผลิตระดับสากล พร้อมการรับรองคุณภาพที่เชื่อถือได้
+          <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+            {t.trust.subtitle}
           </p>
         </div>
 
@@ -87,7 +116,7 @@ const TrustSection: React.FC = () => {
               <div className="relative mb-6 overflow-hidden rounded-lg shadow-md">
                 <Image
                   src={item.image}
-                  alt={item.title}
+                  alt={item.title[language]}
                   width={300}
                   height={200}
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
@@ -98,24 +127,24 @@ const TrustSection: React.FC = () => {
                   </div>
                 </div>
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                {item.title}
+              <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-3">
+                {item.title[language]}
               </h3>
-              <p className="text-gray-600">
-                {item.description}
+              <p className="text-gray-600 dark:text-gray-400">
+                {item.description[language]}
               </p>
             </div>
           ))}
         </div>
 
         {/* Certifications */}
-        <div className="bg-gray-50 rounded-lg p-8">
+        <div className="bg-gray-50 dark:bg-gray-900 rounded-lg p-8">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-gray-900 mb-2">
-              การรับรองและมาตรฐาน
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-2">
+              {t.trust.certifications.title}
             </h3>
-            <p className="text-gray-600">
-              ผลิตภัณฑ์ที่ผ่านการรับรองมาตรฐานคุณภาพระดับสากล
+            <p className="text-gray-600 dark:text-gray-400">
+              {t.trust.certifications.subtitle}
             </p>
           </div>
 
@@ -123,7 +152,7 @@ const TrustSection: React.FC = () => {
             {certifications.map((cert, index) => (
               <div 
                 key={index} 
-                className="bg-white rounded-lg p-4 shadow-sm hover:shadow-md transition-shadow duration-300 text-center"
+                className="bg-white dark:bg-gray-800 rounded-lg p-4 shadow-sm hover:shadow-md dark:shadow-gray-900/50 transition-shadow duration-300 text-center"
               >
                 <Image
                   src={cert.image}
@@ -132,7 +161,7 @@ const TrustSection: React.FC = () => {
                   height={80}
                   className="w-full h-20 object-contain mb-3"
                 />
-                <p className="text-sm font-medium text-gray-700">
+                <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
                   {cert.name}
                 </p>
               </div>
@@ -143,20 +172,20 @@ const TrustSection: React.FC = () => {
         {/* Trust Statistics */}
         <div className="mt-16 grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
           <div className="p-6">
-            <div className="text-4xl font-bold text-blue-600 mb-2">1000+</div>
-            <p className="text-gray-600">โครงการที่สำเร็จ</p>
+            <div className="text-4xl font-bold text-blue-600 dark:text-blue-400 mb-2">1000+</div>
+            <p className="text-gray-600 dark:text-gray-400">{t.trust.stats.projects}</p>
           </div>
           <div className="p-6">
-            <div className="text-4xl font-bold text-green-600 mb-2">15+</div>
-            <p className="text-gray-600">ปีประสบการณ์</p>
+            <div className="text-4xl font-bold text-green-600 dark:text-green-400 mb-2">15+</div>
+            <p className="text-gray-600 dark:text-gray-400">{t.trust.stats.experience}</p>
           </div>
           <div className="p-6">
-            <div className="text-4xl font-bold text-purple-600 mb-2">99.8%</div>
-            <p className="text-gray-600">ความพึงพอใจลูกค้า</p>
+            <div className="text-4xl font-bold text-purple-600 dark:text-purple-400 mb-2">99.8%</div>
+            <p className="text-gray-600 dark:text-gray-400">{t.trust.stats.satisfaction}</p>
           </div>
           <div className="p-6">
-            <div className="text-4xl font-bold text-orange-600 mb-2">24/7</div>
-            <p className="text-gray-600">บริการหลังการขาย</p>
+            <div className="text-4xl font-bold text-orange-600 dark:text-orange-400 mb-2">24/7</div>
+            <p className="text-gray-600 dark:text-gray-400">{t.trust.afterSales}</p>
           </div>
         </div>
       </Container>

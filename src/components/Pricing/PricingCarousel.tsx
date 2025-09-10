@@ -4,12 +4,14 @@ import { useState, useRef, useEffect, useCallback } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import PricingColumn from './PricingColumn';
 import { IPricing } from '@/types';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface PricingCarouselProps {
     tiers: IPricing[];
 }
 
 const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
+    const { language, isLoading, t } = useLanguage();
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isTransitioning, setIsTransitioning] = useState(false);
     const [isPaused, setIsPaused] = useState(false);
@@ -88,7 +90,7 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
         return () => clearTimeout(timer);
     }, [currentIndex]);
     
-    // Auto-play functionality (หยุดเมื่อ hover)
+    // Auto-play functionality
     useEffect(() => {
         if (isPaused) return;
         
@@ -96,10 +98,22 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
             if (!isTransitioning) {
                 nextSlide();
             }
-        }, 6000); // เลื่อนทุก 6 วินาที
+        }, 6000);
         
         return () => clearInterval(interval);
     }, [isTransitioning, nextSlide, isPaused]);
+
+    if (isLoading) {
+        return (
+            <div className="relative w-full">
+                <div className="flex gap-4">
+                    {[1, 2, 3].map(i => (
+                        <div key={i} className="flex-1 bg-gray-200 dark:bg-gray-700 rounded-xl h-96 animate-pulse"></div>
+                    ))}
+                </div>
+            </div>
+        );
+    }
     
     return (
         <div className="relative w-full">
@@ -126,30 +140,30 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
                         >
                             <PricingColumn 
                                 tier={tier} 
-                                highlight={index === 1} // Highlight EHF/ESF Series (ปั๊มดับเพลิง)
+                                highlight={index === 1} // Highlight EHF/ESF Series
                             />
                         </div>
                     ))}
                 </div>
             </div>
             
-            {/* Navigation Arrows - ซ่อนบนมือถือ */}
+            {/* Navigation Arrows */}
             <button
                 onClick={prevSlide}
                 disabled={isTransitioning}
-                className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 z-10 items-center justify-center"
-                aria-label="Previous"
+                className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 z-10 items-center justify-center"
+                aria-label={language === 'th' ? 'ก่อนหน้า' : 'Previous'}
             >
-                <FiChevronLeft className="w-6 h-6 text-gray-600" />
+                <FiChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
             </button>
             
             <button
                 onClick={nextSlide}
                 disabled={isTransitioning}
-                className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 z-10 items-center justify-center"
-                aria-label="Next"
+                className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 z-10 items-center justify-center"
+                aria-label={language === 'th' ? 'ถัดไป' : 'Next'}
             >
-                <FiChevronRight className="w-6 h-6 text-gray-600" />
+                <FiChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
             </button>
             
             {/* Dots Indicator */}
@@ -162,23 +176,23 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
                         className={`w-3 h-3 rounded-full transition-all duration-200 ${
                             index === currentIndex 
                                 ? 'bg-primary scale-110' 
-                                : 'bg-gray-300 hover:bg-gray-400'
+                                : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
                         }`}
-                        aria-label={`ดูซีรีส์ที่ ${index + 1}`}
+                        aria-label={`${t.pricingUI.viewSeries} ${index + 1}`}
                     />
                 ))}
             </div>
             
             {/* Series Counter & Instructions */}
             <div className="text-center mt-4">
-                <p className="text-sm text-gray-500 mb-2">
-                    แสดง {Math.min(currentIndex + itemsPerView, tiers.length)} จาก {tiers.length} ซีรีส์ปั๊มน้ำ Eifel
+                <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+                    {`${t.pricingUI.showing} ${Math.min(currentIndex + itemsPerView, tiers.length)} ${t.pricingUI.of} ${tiers.length} ${t.pricingUI.series}`}
                 </p>
-                <p className="text-xs text-gray-400 md:hidden">
-                    📱 ปัดซ้าย-ขวาเพื่อดูซีรีส์อื่น
+                <p className="text-xs text-gray-400 dark:text-gray-500 md:hidden">
+                    {t.pricingUI.swipeInstruction}
                 </p>
-                <p className="text-xs text-gray-400 hidden md:block">
-                    🖱️ ใช้ลูกศรหรือจุดด้านล่างเพื่อเลื่อนดู
+                <p className="text-xs text-gray-400 dark:text-gray-500 hidden md:block">
+                    {t.pricingUI.navigationInstruction}
                 </p>
             </div>
         </div>

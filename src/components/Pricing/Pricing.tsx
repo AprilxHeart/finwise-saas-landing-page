@@ -1,7 +1,11 @@
+'use client';
+
 import PricingCarousel from "./PricingCarousel";
-import { tiers } from "@/data/pricing";
+import { usePricing } from "@/data/pricing";
 
 const Pricing: React.FC = () => {
+    const tiers = usePricing();
+    
     return (
         <div className="w-full">
             <PricingCarousel tiers={tiers} />

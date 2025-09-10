@@ -1,3 +1,5 @@
+'use client';
+
 import Hero from "@/components/Hero";
 import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing/Pricing";
@@ -11,73 +13,88 @@ import Team from "@/components/Team";
 import TrustSection from "@/components/TrustSection";
 import WorkingEnvironment from "@/components/WorkingEnvironment";
 import Logos from "@/components/Logos";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const HomePage: React.FC = () => {
+  const { t, isLoading } = useLanguage();
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-background dark:bg-gray-900 transition-colors">
+        {/* Loading Hero */}
+        <div className="h-screen flex items-center justify-center">
+          <div className="text-center">
+            <div className="w-32 h-8 bg-gray-200 dark:bg-gray-700 rounded animate-pulse mx-auto mb-4"></div>
+            <div className="w-48 h-6 bg-gray-200 dark:bg-gray-700 rounded animate-pulse mx-auto"></div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <>
-      {/* Hero Section - จุดเริ่มต้น */}
+      {/* Hero Section */}
       <Hero />
       
-      {/* Client Logos - สร้างความน่าเชื่อถือ */}
+      {/* Client Logos */}
       <Logos />
       
       <Container>
-        {/* Features Section - แสดงจุดเด่น */}
+        {/* Features Section */}
         <Section
           id="features"
-          title="คุณสมบัติเด่น"
-          description="ความพิเศษของเรา ที่ทำให้เราแตกต่าง"
+          title={t.features.title}
+          description={t.features.subtitle}
         >
           <Benefits />
         </Section>
 
-        {/* Stats Section - สถิติเพื่อสร้างความน่าเชื่อถือ */}
+        {/* Stats Section */}
         <Stats />
 
-        {/* Products Section - ผลิตภัณฑ์หลัก */}
+        {/* Products Section */}
         <Section
           id="pricing"
-          title="ซีรีส์ปั๊มน้ำ Eifel"
-          description="เลือกปั๊มน้ำที่เหมาะกับความต้องการและโครงการของคุณ"
+          title={t.products.title}
+          description={t.products.subtitle}
         >
           <Pricing />
         </Section>
-
-        {/* Trust Section - อยู่นี่เพื่อสร้างความมั่นใจหลังดูผลิตภัณฑ์ */}
       </Container>
       
       <TrustSection />
       
       <Container>
-        {/* Testimonials - ความคิดเห็นลูกค้า */}
+        {/* Testimonials */}
         <Section
           id="testimonials"
-          title="รีวิวจากลูกค้า"
-          description="ความไว้วางใจจากลูกค้าที่เลือกใช้ปั๊มน้ำ Eifel"
+          title={t.testimonials.title}
+          description={t.testimonials.subtitle}
         >
           <Testimonials />
         </Section>
 
-        {/* FAQ Section - ตอบข้อสงสัย */}
+        {/* FAQ Section */}
         <Section
           id="faq"
-          title="คำถามที่พบบ่อย"
-          description="คำตอบสำหรับคำถามที่ลูกค้าสนใจ"
+          title={t.faq.title}
+          description={t.faq.subtitle}
         >
           <FAQ />
         </Section>
       </Container>
 
-      {/* Team Section - แสดงทีมงาน */}
+      {/* Team Section */}
       <div id="team">
         <Team />
       </div>
 
-      {/* Working Environment - สภาพแวดล้อมการทำงาน */}
+      {/* Working Environment */}
       <WorkingEnvironment />
 
       <Container>
-        {/* CTA Section - เรียกร้องให้ติดต่อ */}
+        {/* CTA Section */}
         <CTA />
       </Container>
     </>

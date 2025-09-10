@@ -1,72 +1,22 @@
 import { IPricing } from "@/types";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-export const tiers: IPricing[] = [
-    {
-        name: 'EH Series - ปั๊มอุตสาหกรรม',
-        price: 'ติดต่อสอบถาม',
-        category: 'ปั๊มอุตสาหกรรม',
-        description: 'ปั๊มน้ำอุตสาหกรรมมาตรฐาน ISO2858 ประสิทธิภาพเหนือกว่า',
-        imageSrc: '/images/EA-1-500x500.jpg',
-        features: [
-            'ปั๊มน้ำอุตสาหกรรมมาตรฐาน ISO2858',
-            'ประสิทธิภาพเหนือกว่ามาตรฐาน',
-            'อัตราการไหลสูงกว่า 1.6 เท่า',
-            'เฮดสูงกว่า 1.25 เท่า',
-            'โครงสร้างทนทาน แข็งแรง',
-            'ลดเสียงรบกวนและแรงสั่นสะเทือน',
-            'การออกแบบ Back Pull-Out',
-            'รับรองมาตรฐาน ISO และ DIN',
-        ],
-    },
-    {
-        name: 'EHF/ESF Series - ปั๊มดับเพลิง',
-        price: 'ติดต่อสอบถาม',
-        category: 'ปั๊มดับเพลิง',
-        description: 'ปั๊มดับเพลิง UL Listed รับรองความปลอดภัยสูงสุด',
-        imageSrc: '/images/ES+1-500x500.jpg',
-        features: [
-            'ปั๊มดับเพลิง UL Listed',
-            'รับรองโดย UL (สหรัฐอเมริกา)',
-            'รับรองโดย PSB (สิงคโปร์)',
-            'ความปลอดภัยสูงสุด',
-            'มาตรฐานระดับสากล',
-            'เหมาะสำหรับระบบดับเพลิง',
-            'โครงสร้างแข็งแกร่ง',
-            'บำรุงรักษาง่าย',
-        ],
-    },
-    {
-        name: 'EJ/EJZ/EJT Series - ปั๊มน้ำเสีย',
-        price: 'ติดต่อสอบถาม',
-        category: 'ปั๊มน้ำเสีย',
-        description: 'ปั๊มน้ำเสียและตะกอน รองรับของแข็งได้ถึง 76 มม.',
-        imageSrc: '/images/EA-1-500x500.jpg',
-        features: [
-            'ปั๊มน้ำเสียและปั๊มดูดตะกอน',
-            'รองรับของแข็งขนาดสูงสุด 76 มม.',
-            'สำหรับโรงบำบัดน้ำเสีย',
-            'การสูบน้ำทิ้ง',
-            'ช่องบำรุงรักษา (Maintenance Hole)',
-            'แผ่นกันสึกหรอ (Wear Plate)',
-            'ทำความสะอาดได้ง่าย',
-            'ทนทานต่อการใช้งานหนัก',
-        ],
-    },
-    {
-        name: 'EJCY Series - ปั๊มสุญญากาศ',
-        price: 'ติดต่อสอบถาม',
-        category: 'ปั๊มสุญญากาศ',
-        description: 'ปั๊มดูดน้ำแบบสุญญากาศ ไพรม์เองได้โดยไม่ต้องเติมน้ำ',
-        imageSrc: '/images/ES+1-500x500.jpg',
-        features: [
-            'ปั๊มดูดน้ำแบบสุญญากาศ',
-            'Vacuum Assisted Self-priming',
-            'ไพรม์ปั๊มเองได้โดยไม่ต้องเติมน้ำ',
-            'เหมาะสำหรับบ่อบาดาล',
-            'งานก่อสร้าง เหมืองหิน',
-            'รองรับอากาศปะปนสูง',
-            'ติดตั้งบนรถเทรลเลอร์ได้',
-            'เคลื่อนย้ายสะดวก',
-        ],
-    },
-]
+export const usePricing = (): IPricing[] => {
+  const { t } = useLanguage();
+  
+  const images = [
+    '/images/EA-1-500x500.jpg',
+    '/images/ES+1-500x500.jpg',
+    '/images/EA-1-500x500.jpg',
+    '/images/ES+1-500x500.jpg'
+  ];
+
+  return t.pricing.map((item, index) => ({
+    name: item.name,
+    price: item.price,
+    category: item.category,
+    description: item.description,
+    imageSrc: images[index],
+    features: item.features
+  }));
+};

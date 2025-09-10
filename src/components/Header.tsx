@@ -7,20 +7,51 @@ import { Transition } from '@headlessui/react';
 import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
 
 import Container from './Container';
+import { ThemeToggle } from './ThemeToggle';
+import { LanguageToggle } from './LanguageToggle';
 import { siteDetails } from '@/data/siteDetails';
-import { menuItems } from '@/data/menuItems';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Header: React.FC = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const { t, isLoading } = useLanguage();
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
     };
 
+    if (isLoading) {
+        return (
+            <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
+                <Container className="!px-0">
+                    <nav className="shadow-md md:shadow-none bg-white dark:bg-gray-900 md:bg-transparent dark:md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
+                        <div className="flex items-center gap-3">
+                            <div className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                            <div className="w-32 h-6 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                        </div>
+                        <div className="hidden md:flex space-x-6">
+                            {[1, 2, 3, 4, 5].map(i => (
+                                <div key={i} className="w-16 h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
+                            ))}
+                        </div>
+                    </nav>
+                </Container>
+            </header>
+        );
+    }
+
+    const menuItems = [
+        { text: t.nav.features, url: "#features" },
+        { text: t.nav.products, url: "#pricing" },
+        { text: t.nav.reviews, url: "#testimonials" },
+        { text: t.nav.team, url: "#team" },
+        { text: t.nav.faq, url: "#faq" }
+    ];
+
     return (
         <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
             <Container className="!px-0">
-                <nav className="shadow-md md:shadow-none bg-white md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
+                <nav className="shadow-md md:shadow-none bg-white dark:bg-gray-900 md:bg-transparent dark:md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3">
                         <Image 
@@ -36,7 +67,7 @@ const Header: React.FC = () => {
                     </Link>
 
                     {/* Desktop Menu */}
-                    <ul className="hidden md:flex space-x-6">
+                    <ul className="hidden md:flex space-x-6 items-center">
                         {menuItems.map(item => (
                             <li key={item.text}>
                                 <Link href={item.url} className="text-foreground hover:text-foreground-accent transition-colors">
@@ -44,19 +75,28 @@ const Header: React.FC = () => {
                                 </Link>
                             </li>
                         ))}
+                        
+                        {/* Theme and Language Toggles */}
+                        <li className="flex items-center gap-2">
+                            <ThemeToggle />
+                            <LanguageToggle />
+                        </li>
+                        
                         <li>
                             <Link href="#cta" className="text-white bg-primary hover:bg-primary-accent px-6 py-2 rounded-full transition-colors text-sm font-medium">
-                                ติดต่อเรา
+                                {t.nav.contact}
                             </Link>
                         </li>
                     </ul>
 
                     {/* Mobile Menu Button */}
-                    <div className="md:hidden flex items-center">
+                    <div className="md:hidden flex items-center gap-2">
+                        <ThemeToggle />
+                        <LanguageToggle />
                         <button
                             onClick={toggleMenu}
                             type="button"
-                            className="bg-primary text-black focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
+                            className="bg-primary text-white focus:outline-none rounded-full w-10 h-10 flex items-center justify-center"
                             aria-controls="mobile-menu"
                             aria-expanded={isOpen}
                         >
@@ -65,7 +105,7 @@ const Header: React.FC = () => {
                             ) : (
                                 <HiBars3 className="h-6 w-6" aria-hidden="true" />
                             )}
-                            <span className="sr-only">Toggle navigation</span>
+                            <span className="sr-only">{t.common.menu}</span>
                         </button>
                     </div>
                 </nav>
@@ -81,7 +121,7 @@ const Header: React.FC = () => {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
             >
-                <div id="mobile-menu" className="md:hidden bg-white shadow-lg">
+                <div id="mobile-menu" className="md:hidden bg-white dark:bg-gray-900 shadow-lg">
                     <ul className="flex flex-col space-y-4 pt-1 pb-6 px-6">
                         {menuItems.map(item => (
                             <li key={item.text}>
@@ -92,7 +132,7 @@ const Header: React.FC = () => {
                         ))}
                         <li>
                             <Link href="#cta" className="text-white bg-primary hover:bg-primary-accent px-4 py-2 rounded-full block w-fit text-sm font-medium" onClick={toggleMenu}>
-                                ติดต่อเรา
+                                {t.nav.contact}
                             </Link>
                         </li>
                     </ul>

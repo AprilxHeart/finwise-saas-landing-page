@@ -16,12 +16,26 @@
   --warm-gray: #718096;
 }
 
+/* Dark mode variables */
+.dark {
+  --background: #0f172a; /* Dark slate */
+  --foreground: #f1f5f9; /* Light slate */
+  --primary: #3b82f6; /* Brighter blue for dark mode */
+  --secondary: #64748b; /* Slate gray */
+  
+  --primary-accent: #1d4ed8; /* Darker blue accent */
+  --foreground-accent: #94a3b8; /* Light slate gray */
+  --hero-background: #1e293b; /* Dark slate background */
+  --luxury-black: #f1f5f9; /* Light for dark mode */
+  --warm-gray: #94a3b8;
+}
+
 html {
   @apply scroll-smooth;
 }
 
 body {
-  @apply text-base; /* ลดขนาดจาก text-lg เป็น text-base */
+  @apply text-base transition-colors; /* ลดขนาดจาก text-lg เป็น text-base + transition */
   
   color: var(--foreground);
   background: var(--background);
@@ -60,4 +74,9 @@ h1, h2, h3, h4, h5, h6 {
 /* Custom classes for professional pump/engineering theme */
 .pump-text-shadow {
   text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Dark mode improvements */
+.dark .pump-text-shadow {
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
 }

@@ -12,9 +12,9 @@ const Section: React.FC<React.PropsWithChildren<Props>> = ({ id, title, descript
         <section id={id} className={`py-16 lg:py-24 ${className}`}>
             <div className="text-center mb-16">
                 <SectionTitle>
-                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">{title}</h2>
+                    <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-4">{title}</h2>
                 </SectionTitle>
-                <p className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed">{description}</p>
+                <p className="text-lg text-gray-600 dark:text-gray-400 max-w-3xl mx-auto leading-relaxed">{description}</p>
             </div>
             {children}
         </section>

@@ -40,7 +40,10 @@ export interface ITestimonial {
 export interface IStats {
     title: string;
     icon: JSX.Element;
-    description: string;
+    description: {
+        th: string;
+        en: string;
+    } | string;
 }
 
 export interface ISocials {
