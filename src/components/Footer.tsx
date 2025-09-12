@@ -180,9 +180,9 @@ const Footer: React.FC = () => {
                         {t.footer.copyright}
                     </p>
                     <div className="flex flex-col md:flex-row justify-center items-center gap-4 text-sm text-gray-500 dark:text-gray-400">
-                        <p>{t.footer.madeWith} <a href="https://nexilaunch.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">Nexi Launch</a></p>
+                        <p>{t.footer.madeWith} <a href="https://perapong-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">Perapong Dev</a></p>
                         <span className="hidden md:inline">|</span>
-                        <p>{t.footer.uiKitBy} <a href="https://ui8.net/youthmind/products/fintech-finance-mobile-app-ui-kit" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">Youthmind</a></p>
+                        <p>{t.footer.uiKitBy} <a href="https://perapong-portfolio.vercel.app/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition-colors">Youthmind</a></p>
                     </div>
                 </div>
             </div>

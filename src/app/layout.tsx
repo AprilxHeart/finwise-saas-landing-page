@@ -4,6 +4,7 @@ import { Source_Sans_3, Manrope } from "next/font/google";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CookieConsent from "@/components/CookieConsent";
 import { siteDetails } from '@/data/siteDetails';
 import { ThemeProvider } from '@/contexts/ThemeProvider';
 import { LanguageProvider } from '@/contexts/LanguageContext';
@@ -89,8 +90,62 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": siteDetails.companyInfo.name,
+    "url": siteDetails.siteUrl,
+    "logo": `${siteDetails.siteUrl}${siteDetails.logoPath}`,
+    "description": siteDetails.metadata.description,
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": siteDetails.companyInfo.phone,
+      "contactType": "customer service",
+      "email": siteDetails.companyInfo.email,
+      "availableLanguage": ["th", "en"]
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "กรุงเทพมหานคร",
+      "addressCountry": "TH"
+    },
+    "sameAs": [
+      siteDetails.companyInfo.facebook
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "ปั๊มน้ำอุตสาหกรรม",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product",
+            "name": "ปั๊มน้ำอุตสาหกรรม",
+            "description": "ปั๊มน้ำคุณภาพสูง มาตรฐาน UL และ ISO"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Product", 
+            "name": "ปั๊มดับเพลิง",
+            "description": "ปั๊มดับเพลิงมาตรฐานสากล"
+          }
+        }
+      ]
+    }
+  };
+
   return (
     <html lang="th" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+      </head>
       <body
         className={`${manrope.className} ${sourceSans.className} antialiased`}
       >
@@ -102,6 +157,7 @@ export default function RootLayout({
               {children}
             </main>
             <Footer />
+            <CookieConsent />
           </LanguageProvider>
         </ThemeProvider>
       </body>

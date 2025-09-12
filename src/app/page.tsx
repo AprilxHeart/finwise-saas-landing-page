@@ -5,6 +5,7 @@ import Testimonials from "@/components/Testimonials";
 import Pricing from "@/components/Pricing/Pricing";
 import FAQ from "@/components/FAQ";
 import Benefits from "@/components/Benefits/Benefits";
+import Services from "@/components/Services";
 import Container from "@/components/Container";
 import Section from "@/components/Section";
 import Stats from "@/components/Stats";
@@ -48,6 +49,15 @@ const HomePage: React.FC = () => {
           description={t.features.subtitle}
         >
           <Benefits />
+        </Section>
+
+        {/* Services Section */}
+        <Section
+          id="services"
+          title={t.servicesSection.title}
+          description={t.servicesSection.subtitle}
+        >
+          <Services />
         </Section>
 
         {/* Stats Section */}

@@ -7,6 +7,7 @@ export const en = {
   // Navigation
   nav: {
     features: 'Features',
+    services: 'Services',
     products: 'Products',
     reviews: 'Reviews',
     team: 'Team',
@@ -48,6 +49,12 @@ export const en = {
     support: 'After-Sales Service'
   },
   
+  // Services
+  servicesSection: {
+    title: 'Our Services',
+    subtitle: 'Comprehensive pump and wastewater treatment system services'
+  },
+  
   // Products/Pricing
   products: {
     title: 'Our Products',
@@ -73,6 +80,50 @@ export const en = {
     title: 'Frequently Asked Questions',
     subtitle: 'Answers to common customer questions'
   },
+  
+  // Services
+  services: [
+    {
+      title: "Import and Distribution",
+      description: "Industrial pumps, clean water pumps, treatment pond pumps, oil pumps, milk pumps, chemical pumps, compressed pumps, alloy and stainless steel casting pumps including various spare parts",
+      iconType: "package"
+    },
+    {
+      title: "Maintenance Services",
+      description: "Water pumps, water treatment systems and water suction equipment by expert technicians",
+      iconType: "settings"
+    },
+    {
+      title: "Consultation and Design",
+      description: "Wastewater treatment systems by our team of engineering specialists",
+      iconType: "users"
+    },
+    {
+      title: "System Installation",
+      description: "Ready to install wastewater treatment systems on-site by skilled technicians",
+      iconType: "tool"
+    },
+    {
+      title: "After-Sales Service",
+      description: "To ensure customers can use products efficiently and for maximum longevity",
+      iconType: "headphones"
+    },
+    {
+      title: "Repair Services",
+      description: "Worn spare parts by specialized technical staff",
+      iconType: "wrench"
+    },
+    {
+      title: "International Procurement",
+      description: "Sourcing products from abroad for service and repair to meet diverse needs",
+      iconType: "globe"
+    },
+    {
+      title: "Wastewater Treatment System Contracting",
+      description: "As main contractor, providing complete solutions from design to delivery",
+      iconType: "hard-hat"
+    }
+  ],
   
   // Benefits
   benefits: [

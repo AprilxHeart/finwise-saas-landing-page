@@ -119,6 +119,7 @@ const TrustSection: React.FC = () => {
                   alt={item.title[language]}
                   width={300}
                   height={200}
+                  loading="lazy"
                   className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-blue-600 bg-opacity-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -159,6 +160,7 @@ const TrustSection: React.FC = () => {
                   alt={cert.name}
                   width={120}
                   height={80}
+                  loading="lazy"
                   className="w-full h-20 object-contain mb-3"
                 />
                 <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
