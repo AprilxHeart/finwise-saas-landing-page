@@ -58,7 +58,7 @@ const Contact: React.FC = () => {
                                     Eifel Thailand
                                 </h4>
                                 <p className="text-sm text-gray-600 dark:text-gray-300 font-medium">
-                                    ตัวแทนจำหน่าย: {siteDetails.companyInfo.name}
+                                    {t.contact.representative}: {siteDetails.companyInfo.name}
                                 </p>
                             </div>
 
@@ -230,12 +230,12 @@ const Contact: React.FC = () => {
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                        บริษัท/องค์กร
+                                        {t.contact.form.company}
                                     </label>
                                     <input 
                                         type="text" 
                                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
-                                        placeholder="ชื่อบริษัท"
+                                        placeholder={t.contact.form.companyPlaceholder}
                                     />
                                 </div>
                             </div>
@@ -265,15 +265,15 @@ const Contact: React.FC = () => {
                             
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    ประเภทสินค้าที่สนใจ
+                                    {t.contact.form.productType}
                                 </label>
                                 <select className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors">
-                                    <option value="">เลือกประเภทสินค้า</option>
-                                    <option value="industrial">ปั๊มน้ำอุตสาหกรรม</option>
-                                    <option value="fire">ปั๊มดับเพลิง</option>
-                                    <option value="wastewater">ปั๊มน้ำเสีย</option>
-                                    <option value="vacuum">ปั๊มสุญญากาศ</option>
-                                    <option value="consultation">ปรึกษาทั่วไป</option>
+                                    <option value="">{t.contact.form.selectProduct}</option>
+                                    <option value="industrial">{t.contact.form.productOptions.industrial}</option>
+                                    <option value="fire">{t.contact.form.productOptions.fire}</option>
+                                    <option value="wastewater">{t.contact.form.productOptions.wastewater}</option>
+                                    <option value="vacuum">{t.contact.form.productOptions.vacuum}</option>
+                                    <option value="consultation">{t.contact.form.productOptions.consultation}</option>
                                 </select>
                             </div>
                             
@@ -301,7 +301,7 @@ const Contact: React.FC = () => {
                 {/* Quick Contact Actions */}
                 <div className="mt-12">
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white text-center mb-6">
-                        🚀 {t.contact.quickContact} - รับบริการทันที
+                        🚀 {t.contact.quickContact} - {t.contact.quickContactSuffix}
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <a 
@@ -313,7 +313,7 @@ const Contact: React.FC = () => {
                             </svg>
                             <div className="text-left">
                                 <div className="font-semibold">📞 {t.contact.callNow}</div>
-                                <div className="text-xs opacity-90">พร้อมให้คำปรึกษา</div>
+                                <div className="text-xs opacity-90">{t.contact.callDescription}</div>
                             </div>
                         </a>
                         
@@ -326,7 +326,7 @@ const Contact: React.FC = () => {
                             </svg>
                             <div className="text-left">
                                 <div className="font-semibold">✉️ {t.contact.sendEmail}</div>
-                                <div className="text-xs opacity-90">ตอบภายใน 2 ชม.</div>
+                                <div className="text-xs opacity-90">{t.contact.emailDescription}</div>
                             </div>
                         </a>
                         

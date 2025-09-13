@@ -340,21 +340,34 @@ export const en = {
     readyToServe: 'Ready to serve with professional team',
     companyInfo: 'Company Information',
     quickContact: 'Quick Contact',
+    quickContactSuffix: 'Instant Service',
     callNow: 'Call Now',
+    callDescription: 'Ready to consult',
     sendEmail: 'Send Email',
+    emailDescription: 'Reply within 2 hrs',
+    representative: 'Authorized Dealer',
     form: {
       title: 'Send Us a Message',
-      name: 'Full Name',
+      name: 'Name',
+      company: 'Company/Organization',
       email: 'Email',
       phone: 'Phone Number',
-      subject: 'Subject',
+      productType: 'Product Type of Interest',
       message: 'Message',
       send: 'Send Message',
-      namePlaceholder: 'Please enter your full name',
-      emailPlaceholder: 'your.email@example.com',
-      phonePlaceholder: '08x-xxx-xxxx',
-      subjectPlaceholder: 'Product inquiry',
-      messagePlaceholder: 'Please specify your requirements...'
+      namePlaceholder: 'Your name',
+      companyPlaceholder: 'Company name',
+      emailPlaceholder: 'Your email',
+      phonePlaceholder: 'Phone number',
+      selectProduct: 'Select product type',
+      productOptions: {
+        industrial: 'Industrial Pumps',
+        fire: 'Fire Pumps',
+        wastewater: 'Wastewater Pumps',
+        vacuum: 'Vacuum Pumps',
+        consultation: 'General Consultation'
+      },
+      messagePlaceholder: 'Tell us about your requirements...'
     }
   },
   

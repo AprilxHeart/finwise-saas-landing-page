@@ -340,21 +340,34 @@ export const th = {
     readyToServe: 'พร้อมให้บริการด้วยทีมงานมืออาชีพ',
     companyInfo: 'ข้อมูลบริษัท',
     quickContact: 'ติดต่อด่วน',
+    quickContactSuffix: 'รับบริการทันที',
     callNow: 'โทรเลย',
+    callDescription: 'พร้อมให้คำปรึกษา',
     sendEmail: 'ส่งอีเมล',
+    emailDescription: 'ตอบภายใน 2 ชม.',
+    representative: 'ตัวแทนจำหน่าย',
     form: {
       title: 'ส่งข้อความถึงเรา',
-      name: 'ชื่อ-นามสกุล',
+      name: 'ชื่อ',
+      company: 'บริษัท/องค์กร',
       email: 'อีเมล',
       phone: 'เบอร์โทรศัพท์',
-      subject: 'หัวข้อ',
+      productType: 'ประเภทสินค้าที่สนใจ',
       message: 'ข้อความ',
       send: 'ส่งข้อความ',
-      namePlaceholder: 'กรุณากรอกชื่อ-นามสกุล',
-      emailPlaceholder: 'your.email@example.com',
-      phonePlaceholder: '08x-xxx-xxxx',
-      subjectPlaceholder: 'สอบถามเกี่ยวกับผลิตภัณฑ์',
-      messagePlaceholder: 'กรุณาระบุรายละเอียดความต้องการของท่าน...'
+      namePlaceholder: 'ชื่อของคุณ',
+      companyPlaceholder: 'ชื่อบริษัท',
+      emailPlaceholder: 'อีเมลของคุณ',
+      phonePlaceholder: 'เบอร์โทรศัพท์',
+      selectProduct: 'เลือกประเภทสินค้า',
+      productOptions: {
+        industrial: 'ปั๊มน้ำอุตสาหกรรม',
+        fire: 'ปั๊มดับเพลิง',
+        wastewater: 'ปั๊มน้ำเสีย',
+        vacuum: 'ปั๊มสุญญากาศ',
+        consultation: 'ปรึกษาทั่วไป'
+      },
+      messagePlaceholder: 'บอกเราเกี่ยวกับความต้องการของคุณ...'
     }
   },
   
