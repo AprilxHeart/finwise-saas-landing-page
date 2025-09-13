@@ -1,8 +1,8 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'นโยบายความเป็นส่วนตัว - Eifel Pump Thailand',
-  description: 'นโยบายความเป็นส่วนตัวและการใช้คุกกี้ของ Eifel Pump Thailand',
+  title: 'นโยบายความเป็นส่วนตัว - Eifel Thailand',
+  description: 'นโยบายความเป็นส่วนตัวและการใช้คุกกี้ของ Eifel Thailand',
 };
 
 export default function PrivacyPolicy() {
@@ -80,9 +80,12 @@ export default function PrivacyPolicy() {
               หากมีคำถามเกี่ยวกับนโยบายความเป็นส่วนตัวนี้ กรุณาติดต่อเราที่:
             </p>
             <ul className="list-none text-gray-600 dark:text-gray-300 mt-4 space-y-2">
-              <li><strong>อีเมล:</strong> info@eifelpump.co.th</li>
-              <li><strong>โทรศัพท์:</strong> +66 2 123 4567</li>
-              <li><strong>ที่อยู่:</strong> กรุงเทพมหานคร ประเทศไทย</li>
+              <li><strong>บริษัท:</strong> ห้างหุ้นส่วนจำกัด วอเตอร์เทค เซลล์ แอนด์ เซอร์วิส</li>
+              <li><strong>อีเมล:</strong> watertech99@gmail.com</li>
+              <li><strong>อีเมลสำรอง:</strong> suradech_num@yahoo.com</li>
+              <li><strong>โทรศัพท์:</strong> 02-455-5801, 02-802-3852</li>
+              <li><strong>แฟกซ์:</strong> 02-455-5847</li>
+              <li><strong>ที่อยู่:</strong> 213 ซ.เพชรเกษม 58 แยก 14 แขวงบางด้วน เขตภาษีเจริญ กรุงเทพฯ 10160</li>
             </ul>
           </section>
         </div>

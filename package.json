@@ -2,7 +2,7 @@
   "name": "eifel-pump-thailand",
   "version": "1.0.0",
   "private": true,
-  "description": "Eifel Pump Thailand - ปั๊มน้ำอุตสาหกรรมคุณภาพสูง มาตรฐานสากล",
+  "description": "Eifel Thailand - ปั๊มน้ำอุตสาหกรรมคุณภาพสูง มาตรฐานสากล",
   "keywords": [
     "ปั๊มน้ำอุตสาหกรรม",
     "ปั๊มดับเพลิง",
@@ -11,7 +11,7 @@
     "industrial pumps",
     "Thailand"
   ],
-  "author": "Eifel Pump Thailand",
+  "author": "Eifel Thailand",
   "homepage": "https://eifel-pumps.vercel.app/",
   "repository": {
     "type": "git",

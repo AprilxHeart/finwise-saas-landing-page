@@ -46,7 +46,8 @@ const Header: React.FC = () => {
         { text: t.nav.products, url: "#pricing" },
         { text: t.nav.reviews, url: "#testimonials" },
         { text: t.nav.team, url: "#team" },
-        { text: t.nav.faq, url: "#faq" }
+        { text: t.nav.faq, url: "#faq" },
+        { text: t.nav.contact, url: "#contact" }
     ];
 
     return (

@@ -3,6 +3,6 @@ export const ctaDetails = {
     subheading: '💬 รับคำปรึกษาฟรี + ใบเสนอราคาพิเศษ<br/>⚡ ปั๊มคุณภาพสูง ราคาคุ้มค่า<br/>🔧 บริการหลังการขายครบวงจร',
     facebookUrl: 'https://www.facebook.com/eifelpumps',
     lineUrl: 'https://line.me/R/ti/p/@eifelpumps',
-    phoneNumber: '+86 591 38260798',
-    email: 'sales@eifelcn.com'
+    phoneNumber: '02-455-5801',
+    email: 'watertech99@gmail.com'
 }

@@ -14,6 +14,7 @@ import Team from "@/components/Team";
 import TrustSection from "@/components/TrustSection";
 import WorkingEnvironment from "@/components/WorkingEnvironment";
 import Logos from "@/components/Logos";
+import Contact from "@/components/Contact";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const HomePage: React.FC = () => {
@@ -102,6 +103,9 @@ const HomePage: React.FC = () => {
 
       {/* Working Environment */}
       <WorkingEnvironment />
+
+      {/* Contact Section */}
+      <Contact />
 
       <Container>
         {/* CTA Section */}

@@ -26,10 +26,10 @@ export default function NotFound() {
           <div className="text-sm text-gray-500">
             หรือติดต่อเราได้ที่: 
             <a 
-              href={`mailto:${siteDetails.companyInfo?.email || 'info@eifelpump.co.th'}`}
+              href={`mailto:${siteDetails.companyInfo?.email || 'watertech99@gmail.com'}`}
               className="text-indigo-600 hover:text-indigo-700 ml-1"
             >
-              {siteDetails.companyInfo?.email || 'info@eifelpump.co.th'}
+              {siteDetails.companyInfo?.email || 'watertech99@gmail.com'}
             </a>
           </div>
         </div>

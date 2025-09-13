@@ -26,7 +26,7 @@ export const footerDetails: {
             url: "#faq"
         }
     ],
-    email: 'sales@eifelcn.com',
+    email: 'watertech99@gmail.com',
     telephone: '+86 591 38260798',
     socials: {
         facebook: 'https://www.facebook.com/eifelpumps',

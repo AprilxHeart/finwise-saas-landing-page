@@ -1,7 +1,7 @@
 // English translations
 export const en = {
   // Site Details
-  siteName: 'Eifel Pump Thailand',
+  siteName: 'Eifel Thailand',
   siteDescription: 'Eifel Pump - Leading importer and distributor of high-quality industrial pumps, fire pumps, sewage pumps, and vacuum pumps. UL and ISO certified, energy-efficient solutions for all your needs.',
   
   // Navigation
@@ -308,7 +308,7 @@ export const en = {
     },
     {
       question: 'What after-sales service is available?',
-      answer: 'We have service centers and teams in Thailand, ready to provide technical consultation, installation, and maintenance services. Contact us at sales@eifelcn.com or export@eifelcn.com.'
+      answer: 'We have service centers and teams in Thailand, ready to provide technical consultation, installation, and maintenance services. Contact us at watertech99@gmail.com or suradech_num@yahoo.com.'
     },
     {
       question: 'What size solids can EJ Series sewage pumps handle?',
@@ -351,7 +351,7 @@ export const en = {
   
   // Footer
   footer: {
-    description: 'Eifel Pump Thailand - Leading provider of high-quality industrial pumps',
+    description: 'Eifel Thailand - Leading provider of high-quality industrial pumps',
     quickLinks: 'Quick Links',
     contact: 'Contact Us',
     phone: 'Phone',
@@ -359,10 +359,9 @@ export const en = {
     address: 'Address',
     workingHours: 'Working Hours',
     followUs: 'Follow Us',
-    headOffice: 'Head Office (China):',
     madeWith: 'Made with ♥ by',
     uiKitBy: 'UI kit by',
-    copyright: '© 2025 Eifel Pump Thailand. All rights reserved.'
+    copyright: '© 2025 Eifel Thailand. All rights reserved.'
   },
   
   workingEnvironment: {

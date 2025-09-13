@@ -108,12 +108,42 @@ const Footer: React.FC = () => {
                         </a>
                     )}
 
+                    {/* Alternative Phone Numbers */}
+                    {siteDetails.companyInfo?.alternativePhones && 
+                        siteDetails.companyInfo.alternativePhones.map((phone, index) => (
+                            <a 
+                                key={index}
+                                href={`tel:${phone}`} 
+                                className="block text-foreground-accent hover:text-foreground transition-colors mb-2"
+                            >
+                                📞 {phone}
+                            </a>
+                        ))
+                    }
+
+                    {/* Fax */}
+                    {siteDetails.companyInfo?.fax && (
+                        <div className="block text-foreground-accent mb-2">
+                            📠 แฟกซ์: {siteDetails.companyInfo.fax}
+                        </div>
+                    )}
+
                     {siteDetails.companyInfo?.email && (
                         <a 
                             href={`mailto:${siteDetails.companyInfo.email}`} 
                             className="block text-foreground-accent hover:text-foreground transition-colors mb-2"
                         >
                             ✉️ {siteDetails.companyInfo.email}
+                        </a>
+                    )}
+
+                    {/* Alternative Email */}
+                    {siteDetails.companyInfo?.alternativeEmail && (
+                        <a 
+                            href={`mailto:${siteDetails.companyInfo.alternativeEmail}`} 
+                            className="block text-foreground-accent hover:text-foreground transition-colors mb-2"
+                        >
+                            ✉️ {siteDetails.companyInfo.alternativeEmail}
                         </a>
                     )}
 
@@ -126,30 +156,9 @@ const Footer: React.FC = () => {
                         </a>
                     )}
 
-                    {/* Alternative Contact Info */}
-                    <div className="mt-4 pt-4 border-t border-gray-600 dark:border-gray-700">
-                        <p className="text-sm text-gray-400 mb-2">{t.footer.headOffice}</p>
-                        {footerDetails.email && (
-                            <a 
-                                href={`mailto:${footerDetails.email}`} 
-                                className="block text-sm text-foreground-accent hover:text-foreground transition-colors"
-                            >
-                                ✉️ {footerDetails.email}
-                            </a>
-                        )}
-                        {footerDetails.telephone && (
-                            <a 
-                                href={`tel:${footerDetails.telephone}`} 
-                                className="block text-sm text-foreground-accent hover:text-foreground transition-colors"
-                            >
-                                📞 {footerDetails.telephone}
-                            </a>
-                        )}
-                    </div>
-
                     {/* Social Media */}
                     {footerDetails.socials && (
-                        <div className="mt-5">
+                        <div className="mt-6">
                             <h5 className="text-sm font-medium mb-2">{t.footer.followUs}</h5>
                             <div className="flex items-center gap-4 flex-wrap">
                                 {Object.keys(footerDetails.socials).map(platformName => {
