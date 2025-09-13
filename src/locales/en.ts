@@ -332,6 +332,31 @@ export const en = {
     description: 'Contact us today to find the perfect pump for your needs',
     button: 'Contact Us'
   },
+
+  // Contact Section
+  contact: {
+    title: 'Contact Us 24/7',
+    subtitle: '💬 Free Consultation | 📋 Special Quotation | 🔧 Complete After-Sales Service',
+    readyToServe: 'Ready to serve with professional team',
+    companyInfo: 'Company Information',
+    quickContact: 'Quick Contact',
+    callNow: 'Call Now',
+    sendEmail: 'Send Email',
+    form: {
+      title: 'Send Us a Message',
+      name: 'Full Name',
+      email: 'Email',
+      phone: 'Phone Number',
+      subject: 'Subject',
+      message: 'Message',
+      send: 'Send Message',
+      namePlaceholder: 'Please enter your full name',
+      emailPlaceholder: 'your.email@example.com',
+      phonePlaceholder: '08x-xxx-xxxx',
+      subjectPlaceholder: 'Product inquiry',
+      messagePlaceholder: 'Please specify your requirements...'
+    }
+  },
   
   // Trust Section
   trust: {

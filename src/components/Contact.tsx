@@ -33,11 +33,11 @@ const Contact: React.FC = () => {
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-                        ติดต่อเราได้ตลอด 24 ชั่วโมง
+                        {t.contact.title}
                     </h2>
                     <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                        💬 รับคำปรึกษาฟรี | 📋 ใบเสนอราคาพิเศษ | 🔧 บริการหลังการขายครบวงจร<br/>
-                        <span className="text-primary font-semibold">พร้อมให้บริการด้วยทีมงานมืออาชีพ</span>
+                        {t.contact.subtitle}<br/>
+                        <span className="text-primary font-semibold">{t.contact.readyToServe}</span>
                     </p>
                 </div>
 
@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
                                 <svg className="w-6 h-6 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                                 </svg>
-                                ข้อมูลการติดต่อ
+                                {t.contact.companyInfo}
                             </h3>
                             
                             {/* Company Name */}
@@ -204,7 +204,7 @@ const Contact: React.FC = () => {
                             <svg className="w-6 h-6 text-primary mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
                             </svg>
-                            ส่งข้อความหาเรา - รับคำปรึกษาฟรี
+                                                        {t.contact.form.title} - รับคำปรึกษาฟรี
                         </h3>
                         
                         <div className="mb-6 p-4 bg-gradient-to-r from-yellow-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 rounded-lg border border-yellow-200 dark:border-yellow-700">
@@ -220,12 +220,12 @@ const Contact: React.FC = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                        ชื่อ
+                                        {t.contact.form.name}
                                     </label>
                                     <input 
                                         type="text" 
                                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
-                                        placeholder="ชื่อของคุณ"
+                                        placeholder={t.contact.form.namePlaceholder}
                                     />
                                 </div>
                                 <div>
@@ -243,22 +243,22 @@ const Contact: React.FC = () => {
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                        อีเมล
+                                        {t.contact.form.email}
                                     </label>
                                     <input 
                                         type="email" 
                                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
-                                        placeholder="อีเมลของคุณ"
+                                        placeholder={t.contact.form.emailPlaceholder}
                                     />
                                 </div>
                                 <div>
                                     <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                        เบอร์โทรศัพท์
+                                        {t.contact.form.phone}
                                     </label>
                                     <input 
                                         type="tel" 
                                         className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
-                                        placeholder="เบอร์โทรศัพท์"
+                                        placeholder={t.contact.form.phonePlaceholder}
                                     />
                                 </div>
                             </div>
@@ -279,12 +279,12 @@ const Contact: React.FC = () => {
                             
                             <div>
                                 <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                                    ข้อความ
+                                    {t.contact.form.message}
                                 </label>
                                 <textarea 
                                     rows={4}
                                     className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent dark:bg-gray-800 dark:text-white transition-colors"
-                                    placeholder="บอกเราเกี่ยวกับความต้องการของคุณ..."
+                                    placeholder={t.contact.form.messagePlaceholder}
                                 ></textarea>
                             </div>
                             
@@ -292,7 +292,7 @@ const Contact: React.FC = () => {
                                 type="submit"
                                 className="w-full bg-primary hover:bg-primary-accent text-white font-semibold py-4 px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg"
                             >
-                                ส่งข้อความ
+                                {t.contact.form.send}
                             </button>
                         </form>
                     </div>
@@ -301,7 +301,7 @@ const Contact: React.FC = () => {
                 {/* Quick Contact Actions */}
                 <div className="mt-12">
                     <h3 className="text-xl font-semibold text-gray-900 dark:text-white text-center mb-6">
-                        🚀 ติดต่อด่วน - รับบริการทันที
+                        🚀 {t.contact.quickContact} - รับบริการทันที
                     </h3>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <a 
@@ -312,7 +312,7 @@ const Contact: React.FC = () => {
                                 <path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                             </svg>
                             <div className="text-left">
-                                <div className="font-semibold">📞 โทรเลย</div>
+                                <div className="font-semibold">📞 {t.contact.callNow}</div>
                                 <div className="text-xs opacity-90">พร้อมให้คำปรึกษา</div>
                             </div>
                         </a>
@@ -325,7 +325,7 @@ const Contact: React.FC = () => {
                                 <path d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                             </svg>
                             <div className="text-left">
-                                <div className="font-semibold">✉️ ส่งอีเมล</div>
+                                <div className="font-semibold">✉️ {t.contact.sendEmail}</div>
                                 <div className="text-xs opacity-90">ตอบภายใน 2 ชม.</div>
                             </div>
                         </a>
