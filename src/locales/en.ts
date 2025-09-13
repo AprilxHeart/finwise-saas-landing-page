@@ -359,6 +359,10 @@ export const en = {
     address: 'Address',
     workingHours: 'Working Hours',
     followUs: 'Follow Us',
+    contactInfo: 'Contact Information',
+    mainContact: 'Main Contact',
+    alternativeContact: 'Alternative Contact',
+    fax: 'Fax',
     madeWith: 'Made with ♥ by',
     uiKitBy: 'UI kit by',
     copyright: '© 2025 Eifel Thailand. All rights reserved.'
