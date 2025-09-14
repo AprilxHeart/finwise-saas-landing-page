@@ -204,67 +204,131 @@ export const en = {
   // Pricing
   pricing: [
     {
-      name: 'EH Series - Industrial Pumps',
+      name: 'EA Series - End Suction Centrifugal Pumps',
       price: 'Contact for Quote',
       category: 'Industrial Pumps',
-      description: 'ISO2858 standard industrial water pumps with superior performance',
+      description: 'End Suction centrifugal pumps designed to DIN24255/EN 733 standard with interchangeable parts',
       features: [
-        'ISO2858 standard industrial water pumps',
-        'Performance exceeding standards',
+        'BS EN733 / DIN24255 standard',
+        'Interchangeable parts',
+        'Flow rate 34~1584 m³/h',
+        'Head 2~150m',
+        'Discharge size DN32~300mm',
+        'High quality, low cost',
+        'Versatile use in factories, mines',
+        'Water supply, fire systems, HVAC, irrigation'
+      ]
+    },
+    {
+      name: 'EH Series - High Efficiency ISO 2858 Pumps',
+      price: 'Contact for Quote',
+      category: 'Industrial Pumps',
+      description: 'High efficiency End Suction centrifugal pumps designed to ISO 2858 standard',
+      features: [
+        'Designed to ISO 2858 standard',
+        'Higher efficiency than standard',
         'Flow rate 1.6 times higher',
         'Head 1.25 times higher',
-        'Durable and strong structure',
-        'Reduced noise and vibration',
-        'Back Pull-Out design',
-        'ISO and DIN standard certified'
+        'Superior hydraulic design',
+        'Significantly reduces energy consumption',
+        'Flow rate 34~1000m³/h',
+        'Head 2~160m, discharge size DN32~200mm'
       ]
     },
     {
-      name: 'EHF/ESF Series - Fire Pumps',
+      name: 'EHF/ESF Series - UL Listed Fire Pumps',
       price: 'Contact for Quote',
       category: 'Fire Pumps',
-      description: 'UL Listed fire pumps certified for maximum safety',
+      description: 'UL Listed fire pumps certified to UL and EN733 standards for maximum safety',
       features: [
-        'UL Listed fire pumps',
-        'UL certified (USA)',
-        'PSB certified (Singapore)',
-        'Maximum safety',
-        'International standards',
-        'Suitable for fire protection systems',
-        'Robust construction',
-        'Easy maintenance'
+        'UL Listed certified (USA)',
+        'EN733 and GB/T5657-95 standards',
+        'EHF: Flow rate 50-750 USGPM',
+        'ESF: Flow rate 450-2200 USGPM',
+        'High efficiency and stability',
+        'Low noise, long service life',
+        'Easy installation and maintenance',
+        'Suitable for all types of fire protection systems'
       ]
     },
     {
-      name: 'EJ/EJZ/EJT Series - Sewage Pumps',
+      name: 'EJ/EJZ/EJT Series - Self-priming Sewage Pumps',
       price: 'Contact for Quote',
       category: 'Sewage Pumps',
-      description: 'Sewage and sludge pumps supporting solids up to 76mm',
+      description: 'Self-priming sewage pumps capable of handling solids, abrasion resistant',
       features: [
-        'Sewage and sludge pumps',
-        'Supports solids up to 76mm maximum',
-        'For wastewater treatment plants',
-        'Waste water pumping',
-        'Maintenance hole',
-        'Wear plate',
-        'Easy to clean',
-        'Durable for heavy-duty use'
+        'Self-priming pumps',
+        'Handles solids up to 76mm maximum',
+        'Abrasion resistant',
+        'Maintenance holes',
+        'Wear plates',
+        'Easy to clean and wash',
+        'Flow rate 34~1000m³/h',
+        'Suitable for wastewater treatment, washing, cooling'
       ]
     },
     {
-      name: 'EJCY Series - Vacuum Pumps',
+      name: 'EGM Series - Vertical In-line Pumps',
+      price: 'Contact for Quote',
+      category: 'Industrial Pumps',
+      description: 'Vertical In-line centrifugal pumps that greatly reduce installation space',
+      features: [
+        'Vertical structure reduces installation space',
+        'Motor shaft directly coupled with pump shaft',
+        'Uses standard IEC motors',
+        'Pump head can be assembled separately',
+        'Flow rate 35~420m³/h',
+        'Head 8~150m',
+        'Suitable for hot/cold water circulation',
+        'Municipal water systems, HVAC, pressure boosting'
+      ]
+    },
+    {
+      name: 'ES Series - Double Suction Split Casing Pumps',
+      price: 'Contact for Quote',
+      category: 'Industrial Pumps',
+      description: 'Double suction split casing centrifugal pumps with high flow rates',
+      features: [
+        'Double suction split casing pumps',
+        'High flow rate, high efficiency',
+        'Stable operation',
+        'Low noise, long service life',
+        'Easy installation and maintenance',
+        'Flow rate 336~3400m³/h',
+        'Head 8~190m, discharge size DN50~350mm',
+        'Suitable for factories, pumping stations, HVAC'
+      ]
+    },
+    {
+      name: 'ELL/ELC Series - Liquid Ring Vacuum Pumps',
       price: 'Contact for Quote',
       category: 'Vacuum Pumps',
-      description: 'Vacuum-assisted self-priming water pumps without water filling',
+      description: 'Liquid Ring vacuum pumps with simple and robust structure',
       features: [
-        'Vacuum-assisted water pumps',
-        'Vacuum Assisted Self-priming',
-        'Self-priming without water filling',
-        'Suitable for wells',
-        'Construction and mining work',
-        'High air content tolerance',
-        'Can be mounted on trailers',
-        'Easy to transport'
+        'Positive displacement pumps',
+        'Nearly isothermal compression',
+        'Oil-free operation',
+        'Handles almost any gas and vapor',
+        'Can handle entrained liquids',
+        'Easy maintenance, reliable',
+        'Low noise, virtually vibration-free',
+        'Pressure range 33~1013 mbar'
+      ]
+    },
+    {
+      name: 'FDL Series - Vertical Multistage Pumps',
+      price: 'Contact for Quote',
+      category: 'Industrial Pumps',
+      description: 'Vertical multistage centrifugal pumps with maximum efficiency of 81%',
+      features: [
+        'Vertical multistage pumps',
+        'Inlet and outlet in same plane',
+        'Standard motors',
+        'Maintenance-free mechanical seals',
+        'Flow rate 31~90 m³/h',
+        'Maximum efficiency 81%',
+        'Maximum pressure 20~28 bar',
+        'Suitable for water supply, industrial, water treatment'
       ]
     }
   ],

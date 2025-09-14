@@ -19,17 +19,17 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
     const [touchEnd, setTouchEnd] = useState<number | null>(null);
     const carouselRef = useRef<HTMLDivElement>(null);
     
-    // Responsive items per view
+    // Responsive items per view - แสดง 3 การ์ดต่อหน้าจอเป็นค่าเริ่มต้น
     const [itemsPerView, setItemsPerView] = useState(3);
     
     useEffect(() => {
         const updateItemsPerView = () => {
-            if (window.innerWidth < 768) {
+            if (window.innerWidth < 640) {
                 setItemsPerView(1); // Mobile: 1 card
             } else if (window.innerWidth < 1024) {
-                setItemsPerView(2); // Tablet: 2 cards
+                setItemsPerView(2); // Tablet: 2 cards  
             } else {
-                setItemsPerView(3); // Desktop: 3 cards
+                setItemsPerView(3); // Desktop: 3 cards เสมอ
             }
         };
         
@@ -38,22 +38,23 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
         return () => window.removeEventListener('resize', updateItemsPerView);
     }, []);
     
+    // คำนวณ maxIndex ใหม่เพื่อให้การเลื่อนถูกต้อง
     const maxIndex = Math.max(0, tiers.length - itemsPerView);
     
     const nextSlide = useCallback(() => {
-        if (isTransitioning) return;
+        if (isTransitioning || maxIndex === 0) return;
         setIsTransitioning(true);
         setCurrentIndex(prev => (prev >= maxIndex ? 0 : prev + 1));
     }, [isTransitioning, maxIndex]);
     
     const prevSlide = useCallback(() => {
-        if (isTransitioning) return;
+        if (isTransitioning || maxIndex === 0) return;
         setIsTransitioning(true);
         setCurrentIndex(prev => (prev <= 0 ? maxIndex : prev - 1));
     }, [isTransitioning, maxIndex]);
     
     const goToSlide = useCallback((index: number) => {
-        if (isTransitioning) return;
+        if (isTransitioning || maxIndex === 0) return;
         setIsTransitioning(true);
         setCurrentIndex(Math.min(index, maxIndex));
     }, [isTransitioning, maxIndex]);
@@ -92,7 +93,7 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
     
     // Auto-play functionality
     useEffect(() => {
-        if (isPaused) return;
+        if (isPaused || maxIndex === 0) return;
         
         const interval = setInterval(() => {
             if (!isTransitioning) {
@@ -101,7 +102,7 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
         }, 6000);
         
         return () => clearInterval(interval);
-    }, [isTransitioning, nextSlide, isPaused]);
+    }, [isTransitioning, nextSlide, isPaused, maxIndex]);
 
     if (isLoading) {
         return (
@@ -124,7 +125,6 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
                     className="flex transition-transform duration-300 ease-in-out select-none"
                     style={{ 
                         transform: `translateX(-${currentIndex * (100 / itemsPerView)}%)`,
-                        width: `${(tiers.length / itemsPerView) * 100}%`
                     }}
                     onMouseEnter={() => setIsPaused(true)}
                     onMouseLeave={() => setIsPaused(false)}
@@ -136,11 +136,11 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
                         <div 
                             key={tier.name} 
                             className="flex-shrink-0 px-2 md:px-4"
-                            style={{ width: `${100 / tiers.length}%` }}
+                            style={{ width: `${100 / itemsPerView}%` }}
                         >
                             <PricingColumn 
                                 tier={tier} 
-                                highlight={index === 1} // Highlight EHF/ESF Series
+                                highlight={index === 2} // Highlight EHF/ESF Series (3rd position)
                             />
                         </div>
                     ))}
@@ -148,52 +148,63 @@ const PricingCarousel: React.FC<PricingCarouselProps> = ({ tiers }) => {
             </div>
             
             {/* Navigation Arrows */}
-            <button
-                onClick={prevSlide}
-                disabled={isTransitioning}
-                className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 z-10 items-center justify-center"
-                aria-label={language === 'th' ? 'ก่อนหน้า' : 'Previous'}
-            >
-                <FiChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
-            </button>
-            
-            <button
-                onClick={nextSlide}
-                disabled={isTransitioning}
-                className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 z-10 items-center justify-center"
-                aria-label={language === 'th' ? 'ถัดไป' : 'Next'}
-            >
-                <FiChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
-            </button>
+            {maxIndex > 0 && (
+                <>
+                    <button
+                        onClick={prevSlide}
+                        disabled={isTransitioning}
+                        className="hidden md:flex absolute left-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 z-10 items-center justify-center"
+                        aria-label={language === 'th' ? 'ก่อนหน้า' : 'Previous'}
+                    >
+                        <FiChevronLeft className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+                    </button>
+                    
+                    <button
+                        onClick={nextSlide}
+                        disabled={isTransitioning}
+                        className="hidden md:flex absolute right-2 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white dark:bg-gray-800/90 dark:hover:bg-gray-800 shadow-lg rounded-full p-2 transition-all duration-200 disabled:opacity-50 z-10 items-center justify-center"
+                        aria-label={language === 'th' ? 'ถัดไป' : 'Next'}
+                    >
+                        <FiChevronRight className="w-6 h-6 text-gray-600 dark:text-gray-300" />
+                    </button>
+                </>
+            )}
             
             {/* Dots Indicator */}
-            <div className="flex justify-center mt-6 space-x-2">
-                {Array.from({ length: maxIndex + 1 }).map((_, index) => (
-                    <button
-                        key={index}
-                        onClick={() => goToSlide(index)}
-                        disabled={isTransitioning}
-                        className={`w-3 h-3 rounded-full transition-all duration-200 ${
-                            index === currentIndex 
-                                ? 'bg-primary scale-110' 
-                                : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
-                        }`}
-                        aria-label={`${t.pricingUI.viewSeries} ${index + 1}`}
-                    />
-                ))}
-            </div>
+            {maxIndex > 0 && (
+                <div className="flex justify-center mt-6 space-x-2">
+                    {Array.from({ length: maxIndex + 1 }).map((_, index) => (
+                        <button
+                            key={index}
+                            onClick={() => goToSlide(index)}
+                            disabled={isTransitioning}
+                            className={`w-3 h-3 rounded-full transition-all duration-200 ${
+                                index === currentIndex
+                                    ? 'bg-primary scale-110' 
+                                    : 'bg-gray-300 dark:bg-gray-600 hover:bg-gray-400 dark:hover:bg-gray-500'
+                            }`}
+                            aria-label={`${t.pricingUI.viewSeries} ${index + 1}`}
+                        />
+                    ))}
+                </div>
+            )}
             
             {/* Series Counter & Instructions */}
             <div className="text-center mt-4">
                 <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
                     {`${t.pricingUI.showing} ${Math.min(currentIndex + itemsPerView, tiers.length)} ${t.pricingUI.of} ${tiers.length} ${t.pricingUI.series}`}
                 </p>
-                <p className="text-xs text-gray-400 dark:text-gray-500 md:hidden">
-                    {t.pricingUI.swipeInstruction}
-                </p>
-                <p className="text-xs text-gray-400 dark:text-gray-500 hidden md:block">
-                    {t.pricingUI.navigationInstruction}
-                </p>
+                
+                {maxIndex > 0 && (
+                    <>
+                        <p className="text-xs text-gray-400 dark:text-gray-500 md:hidden">
+                            {t.pricingUI.swipeInstruction}
+                        </p>
+                        <p className="text-xs text-gray-400 dark:text-gray-500 hidden md:block">
+                            {t.pricingUI.navigationInstruction}
+                        </p>
+                    </>
+                )}
             </div>
         </div>
     );
