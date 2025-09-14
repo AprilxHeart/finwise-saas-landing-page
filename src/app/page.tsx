@@ -15,23 +15,14 @@ import TrustSection from "@/components/TrustSection";
 import WorkingEnvironment from "@/components/WorkingEnvironment";
 import Logos from "@/components/Logos";
 import Contact from "@/components/Contact";
+import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const HomePage: React.FC = () => {
   const { t, isLoading } = useLanguage();
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen bg-background dark:bg-gray-900 transition-colors">
-        {/* Loading Hero */}
-        <div className="h-screen flex items-center justify-center">
-          <div className="text-center">
-            <div className="w-32 h-8 bg-gray-200 dark:bg-gray-700 rounded animate-pulse mx-auto mb-4"></div>
-            <div className="w-48 h-6 bg-gray-200 dark:bg-gray-700 rounded animate-pulse mx-auto"></div>
-          </div>
-        </div>
-      </div>
-    );
+    return <LoadingSpinner fullScreen />;
   }
 
   return (

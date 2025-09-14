@@ -9,6 +9,7 @@ import { HiOutlineXMark, HiBars3 } from 'react-icons/hi2';
 import Container from './Container';
 import { ThemeToggle } from './ThemeToggle';
 import { LanguageToggle } from './LanguageToggle';
+import LoadingSpinner from './ui/LoadingSpinner';
 import { siteDetails } from '@/data/siteDetails';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -25,15 +26,7 @@ const Header: React.FC = () => {
             <header className="bg-transparent fixed top-0 left-0 right-0 md:absolute z-50 mx-auto w-full">
                 <Container className="!px-0">
                     <nav className="shadow-md md:shadow-none bg-white dark:bg-gray-900 md:bg-transparent dark:md:bg-transparent mx-auto flex justify-between items-center py-2 px-5 md:py-10">
-                        <div className="flex items-center gap-3">
-                            <div className="w-10 h-10 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
-                            <div className="w-32 h-6 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
-                        </div>
-                        <div className="hidden md:flex space-x-6">
-                            {[1, 2, 3, 4, 5].map(i => (
-                                <div key={i} className="w-16 h-4 bg-gray-200 dark:bg-gray-700 rounded animate-pulse"></div>
-                            ))}
-                        </div>
+                        <LoadingSpinner size="sm" text="" />
                     </nav>
                 </Container>
             </header>
