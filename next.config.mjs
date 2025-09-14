@@ -4,7 +4,7 @@ const nextConfig = {
   // output: 'export',
   // trailingSlash: true,
   
-  // Image optimization
+  // Image optimization for better SEO and performance
   images: {
     remotePatterns: [
       {
@@ -13,6 +13,9 @@ const nextConfig = {
       },
     ],
     formats: ['image/webp', 'image/avif'],
+    minimumCacheTTL: 60 * 60 * 24 * 365, // 1 year
+    deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
+    imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   
   // SEO and Performance optimizations
@@ -43,6 +46,14 @@ const nextConfig = {
             key: 'X-DNS-Prefetch-Control',
             value: 'on',
           },
+          {
+            key: 'Strict-Transport-Security',
+            value: 'max-age=31536000; includeSubDomains',
+          },
+          {
+            key: 'Permissions-Policy',
+            value: 'camera=(), microphone=(), geolocation=(), interest-cohort=()',
+          },
         ],
       },
       {
@@ -72,12 +83,62 @@ const nextConfig = {
           },
         ],
       },
+      {
+        source: '/sitemap.xml',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400', // 1 day
+          },
+        ],
+      },
+      {
+        source: '/robots.txt',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400', // 1 day
+          },
+        ],
+      },
+    ];
+  },
+  
+  // Redirects for SEO
+  async redirects() {
+    return [
+      {
+        source: '/index',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
     ];
   },
   
   // Experimental features for better performance
   experimental: {
     optimizePackageImports: ['@headlessui/react', 'react-icons'],
+    // optimizeCss: true, // Temporarily disabled due to critters dependency issue
+  },
+  
+  // Webpack optimizations
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      config.optimization.splitChunks.cacheGroups = {
+        ...config.optimization.splitChunks.cacheGroups,
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
+        },
+      };
+    }
+    return config;
   },
 };
 

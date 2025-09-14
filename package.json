@@ -27,7 +27,10 @@
     "export": "next build && next export",
     "analyze": "cross-env ANALYZE=true next build",
     "clean": "rm -rf .next out dist",
-    "preview": "next build && next start"
+    "preview": "next build && next start",
+    "seo:test": "lighthouse https://eifel-pumps.vercel.app --output json --output html --output-path ./seo-report",
+    "seo:sitemap": "next build && echo 'Sitemap generated at /sitemap.xml'",
+    "deploy": "npm run build && vercel --prod"
   },
   "dependencies": {
     "@headlessui/react": "^2.1.8",

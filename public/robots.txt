@@ -1,17 +1,36 @@
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://eifel-pumps.vercel.app/sitemap.xml
-
-# Disallow sensitive directories
+# Block sensitive paths
 Disallow: /api/
 Disallow: /_next/
 Disallow: /admin/
+Disallow: /.env
+Disallow: /*.json$
 
-# Allow search engines to crawl images
+# Allow important resources
 Allow: /images/
 Allow: /public/
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
 
-# Crawl delay for better server performance
+# Special handling for search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+
+# Sitemap location
+Sitemap: https://eifel-pumps.vercel.app/sitemap.xml
+
+# Crawl delay for server performance
 Crawl-delay: 1
+
+# Host preference (optional)
+Host: https://eifel-pumps.vercel.app
